@@ -1,19 +1,19 @@
 module.exports = function(grunt) {
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		cssmin: {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    cssmin: {
       options: {
         compatibility: 'ie8',
         keepSpecialComments: '*',
         noAdvanced: true
       },
       minify: {
-    		expand: true,
-    		cwd: 'dist/',
-    		src: ['*.css', '!*.min.css'],
-    		dest: 'dist/min/',
-    		ext: '.min.css'
- 			}
+        expand: true,
+        cwd: 'dist/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/min/',
+        ext: '.min.css'
+      }
     },
     csscomb: {
       options: {
@@ -26,33 +26,33 @@ module.exports = function(grunt) {
         dest: 'dist/'
       }
     },
-		sass: {
-			dist: {                            // Target
-      	options: {                       // Target options
-      	 	style: 'expanded',
-      	 	banner: '/*!\n' +
+    sass: {
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'expanded',
+          banner: '/*!\n' +
             ' * laySCSS v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright 2014-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
             ' */\n',
-      	},
-      	files: {                         // Dictionary of files
+        },
+        files: {                         // Dictionary of files
           'dist/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss',
-        	'dist/<%= pkg.name %>-examples.css': 'scss/<%= pkg.name %>-examples.scss'
-      	}
-   		}
-		},
-		watch: {
-			css: {
-				files: ['scss/**/*.scss', 'scss/**/_*.scss'],
-				tasks: ['sass', 'csscomb', 'cssmin']
-			}
-		}
-	});
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-csscomb');
+          'dist/<%= pkg.name %>-examples.css': 'scss/<%= pkg.name %>-examples.scss'
+        }
+      }
+    },
+    watch: {
+      css: {
+        files: ['scss/**/*.scss', 'scss/**/_*.scss'],
+        tasks: ['sass', 'csscomb', 'cssmin']
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-csscomb');
 
-	grunt.registerTask('default',['watch']);
+  grunt.registerTask('default',['watch']);
 }
