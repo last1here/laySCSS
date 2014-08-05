@@ -1,6 +1,13 @@
 // Suffixs
+$content-prefix: "content" !default;
+$siderbar-prefix: "sidebar" !default;
 
+// Suffixs
 $wrapper-suffix: "-wrapper" !default;
 
+$size-default-suffix: "" !default;
 $size-thin-suffix: "__thin" !default;
 $size-wide-suffix: "__wide" !default;
+
+$position-left-suffix: "-left" !default;
+$position-right-suffix: "-right" !default;
