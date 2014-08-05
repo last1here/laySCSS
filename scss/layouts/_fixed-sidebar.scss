@@ -1,0 +1,24 @@
+@mixin fixed-sidebar() {
+  &.fixed-sidebar {
+  	.#{$content-label}#{$wrapper-suffix} {
+			width: 50%;
+		}
+			.#{$content-label}#{$wrapper-suffix}#{$size-wide-suffix} {
+				width: 60%;
+			}
+
+		.#{$sidebar-label}#{$wrapper-suffix} {
+			width: 25%;
+			background: #F8F8F8;
+			position: fixed;
+			top: 0; bottom: 0;
+		}
+			.#{$sidebar-label} {
+				position: absolute;
+				top: 0;bottom: 0;
+				max-width: 100%;
+				word-wrap: break-word;
+				overflow-y: auto;
+			}
+	}
+}

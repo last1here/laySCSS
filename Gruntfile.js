@@ -37,13 +37,14 @@ module.exports = function(grunt) {
             ' */\n',
       	},
       	files: {                         // Dictionary of files
-        	'dist/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss'
+          'dist/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss',
+        	'dist/<%= pkg.name %>-examples.css': 'scss/<%= pkg.name %>-examples.scss'
       	}
    		}
 		},
 		watch: {
 			css: {
-				files: 'scss/**/*.scss',
+				files: ['scss/**/*.scss', 'scss/**/_*.scss'],
 				tasks: ['sass', 'csscomb', 'cssmin']
 			}
 		}

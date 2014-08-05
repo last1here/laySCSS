@@ -1,0 +1,27 @@
+/*!
+ * laySCSS v0.0.1 (https://github.com/last1here/laySCSS)
+ * Copyright 2014-2014 Last1Here
+ * Licensed under MIT (https://github.com/last1here/laySCSS/LICENSE)
+ */
+
+div.fixed-sidebar .content-wrapper {
+  width: 50%;
+}
+div.fixed-sidebar .content-wrapper__wide {
+  width: 60%;
+}
+div.fixed-sidebar .sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  background: #F8F8F8;
+}
+div.fixed-sidebar .sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  max-width: 100%;
+  overflow-y: auto;
+  word-wrap: break-word;
+}

@@ -1,0 +1,5 @@
+@import "laySCSS";
+
+div {
+	@include fixed-sidebar();
+}
