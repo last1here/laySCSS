@@ -27,8 +27,8 @@ module.exports = function(grunt) {
       }
     },
     sass: {
-      dist: {                            // Target
-        options: {                       // Target options
+      dist: {
+        options: {
           style: 'expanded',
           banner: '/*!\n' +
             ' * laySCSS v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
             ' */\n',
         },
-        files: {                         // Dictionary of files
+        files: {
           'dist/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss',
           'dist/<%= pkg.name %>-examples.css': 'scss/<%= pkg.name %>-examples.scss'
         }
